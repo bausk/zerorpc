@@ -77,7 +77,7 @@ class ZeroRpcServer(object):
 
         try:
             zmq.device(zmq.QUEUE, self.clients, self.workers)
-        except zmq.error.ZMQError, e:
+        except zmq.core.error.ZMQError, e:
             if e.errno == zmq.ETERM:
                 # server was shut down
                 pass
@@ -144,7 +144,7 @@ class ZeroRpcServer(object):
         while True:
             try:
                 request_packet = socket.recv()
-            except zmq.error.ZMQError, e:
+            except zmq.core.error.ZMQError, e:
                 if e.errno == zmq.ETERM:
                     break
             else:

@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.append(r"..\..")
+sys.path.append(r"D:\\Documents\\Github")
 import zerorpc.server
 import zerorpc.client
 
